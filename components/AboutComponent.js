@@ -20,6 +20,7 @@ const Mission = () => {
 class About extends Component {
     ​
         constructor(props) {
+            super(props);
             this.state = {
                 partners: PARTNERS
             };
