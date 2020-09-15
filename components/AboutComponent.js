@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, ScrollView, FlatList } from 'react-native';
 import { ListItem, Card } from 'react-native-elements';
 import { PARTNERS } from '../shared/partners';
-
 const Mission = () => {
     return (
         <Text>
@@ -14,50 +13,42 @@ const Mission = () => {
             We also present a platform for campers to share reviews on campsites 
             they have visited with each other.
         </Text>  
-    );
-}
-
-class About extends Component {
-    ​
-        constructor(props) {
-            super(props);
-            this.state = {
-                partners: PARTNERS
-            };
-        }
-    ​
-        static navigationOptions = {
-            title: 'About Us'
-        }
-
-​
-    render() {
-        const renderPartner = ({item}) => {
-            return (
-                <ListItem
-                    title={item.name}
-                    subtitle={item.description}
-                    leftAvatar={{ source: require('./images/bootstrap-logo.png')}}
-                /> 
-            );
-        };    
-            
-            return ( 
-                <ScrollView>
-                    <Card title="Our Mission">
-                        <Mission />
-                    </Card>
-                    <Card title="Community Partners">
-                        <FlatList
-                            data={this.state.partners}
-                            renderItem={renderPartner}
-                            keyExtractor={item => item.id.toString()}
-                        />
-                    </Card>
-                </ScrollView> 
+        );
+    }
+    class About extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            partners: PARTNERS
+        };
+    }
+    static navigationOptions = {
+        title: 'About Us'
+    }
+render() {
+    const renderPartner = ({item}) => {
+        return (
+            <ListItem
+                title={item.name}
+                subtitle={item.description}
+                leftAvatar={{ source: require('./images/bootstrap-logo.png')}}
+            /> 
+        );
+    };     
+        return ( 
+            <ScrollView>
+                <Card title="Our Mission">
+                    <Mission />
+                </Card>
+                <Card title="Community Partners">
+                    <FlatList
+                        data={this.state.partners}
+                        renderItem={renderPartner}
+                        keyExtractor={item => item.id.toString()}
+                    />
+                </Card>
+            </ScrollView> 
             );
         }
-    }     
-​
-​
+    }
 export default About;
