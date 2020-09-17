@@ -16,7 +16,7 @@ const DirectoryNavigator = createStackNavigator(
         initialRouteName: 'Directory',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#563700'
+                backgroundColor: '#5637DD'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -34,7 +34,7 @@ const AboutNavigator= createStackNavigator(
     {
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#563700'
+                backgroundColor: '#5637DD'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -52,7 +52,7 @@ const HomeNavigator= createStackNavigator(
     {
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#563700'
+                backgroundColor: '#5637DD'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -70,7 +70,7 @@ const ContactNavigator= createStackNavigator(
     {
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#563700'
+                backgroundColor: '#5637DD'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
