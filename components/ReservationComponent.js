@@ -106,20 +106,18 @@ class Reservation extends Component {
                         <Text style={styles.modalText}>Number of Campers: {this.state.campers}</Text>
                         <Text style={styles.modalText}>Hike-In?: {this.state.hikeIn ? 'Yes' : 'No'}</Text>
                         <Text style={styles.modalText}>Date: {this.state.date}</Text>
+                        <Button
+                            onPress={() => {
+                                this.toggleModal();
+                                this.resetForm();
+                            }}
+                            color='#5637DD'
+                            title='Close'
+                        />
                     </View>
                 </Modal>
             </ScrollView>
         );
-    }
-
-    newMethod() {
-        return <Button
-            onPress {...() => {
-                this.toggleModal();
-                this.resetForm();
-            } }
-            color='#5637DD'
-            title='Close' />;
     }
 }
 
