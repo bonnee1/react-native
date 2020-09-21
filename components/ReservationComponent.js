@@ -112,7 +112,7 @@ class Reservation extends Component {
         );
     }
 
-    toggleModal() {
+    newMethod() {
         return <Button
             onPress {...() => {
                 this.toggleModal();
