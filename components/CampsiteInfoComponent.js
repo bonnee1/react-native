@@ -150,8 +150,8 @@ class CampsiteInfo extends Component {
                                     name: 'user-o'
                                 }}
                                 leftIconContainerStyle={{paddingRight: 10}}
-                                onChangeText={(author)=this.setState({author: author})}
-                                value={value}
+                                onChangeText={(text)=>this.setState({author: text})}
+                                value={this.state.author}
                             />
 
                             <Input
@@ -161,8 +161,8 @@ class CampsiteInfo extends Component {
                                     name: 'comment-o'
                                 }}
                                 leftIconContainerStyle={{paddingRight: 10}}
-                                onChangeText={(text)=this.setState({text: text})}
-                                value={value}
+                                onChangeText={(text)=>this.setState({text: text})}
+                                value={this.state.text}
                             />
 
                             <View
