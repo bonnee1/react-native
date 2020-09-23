@@ -62,7 +62,11 @@ function RenderComments({comments}) {
         return (
             <View style={{ margin: 10 }}>
                 <Text style={{ fontSize: 14 }}>{item.text}</Text>
-                <Text style={{ fontSize: 12 }}>{item.rating} Stars</Text>
+                <Rating style={{alignItems: 'flex-start', paddingVertical: '5%'}}
+                    readonly
+                    startingValue={item.rating}
+                    imageSize={10}
+                />
                 <Text style={{ fontSize: 12 }}>{`--${item.author}, ${item.date}`}</Text>
             </View>
         );
@@ -164,17 +168,27 @@ class CampsiteInfo extends Component {
                                 onChangeText={(text)=>this.setState({text: text})}
                                 value={this.state.text}
                             />
-
-                            <View
-                            style={{margin: 10}}>
-                                <Button
-                                    onPress={() => {
-                                        this.toggleModal();
-                                    }}
-                                    color='#808080'
-                                    title='Cancel'
-                                />
-                            </View>
+                        </View>
+                        <View style={{margin: 10}}>
+                            <Button 
+                                title='submit'
+                                color='#5637DD'
+                                onPress={() => {
+                                    this.handleComment(campsiteId);
+                                    this.resetForm();
+                                }}
+                            />
+                        </View>
+                        <View
+                        style={{margin: 10}}>
+                            <Button
+                                onPress={() => {
+                                    this.toggleModal();
+                                    this.resetForm();
+                                }}
+                                color='#808080'
+                                title='Cancel'
+                            />
                         </View>
                     </Modal>
             </ScrollView>
