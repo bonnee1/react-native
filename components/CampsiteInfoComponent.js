@@ -3,19 +3,22 @@ import { Text, TextInput, View, ScrollView, FlatList, Modal, Button, StyleSheet 
 import { Card, Icon, Rating, Input  } from 'react-native-elements';
 import { baseUrl } from '../shared/baseUrl';
 import { connect } from 'react-redux';
-import { postFavorite } from '../redux/ActionCreators';
+import { postFavorite, postComment } from '../redux/ActionCreators';
+
 
 const mapStateToProps = state => {
     return {
         campsites: state.campsites,
         comments: state.comments,
         favorites: state.favorites,
-        author: state.author
+        author: state.author,
+        
     };
 };
 
 const mapDispatchToProps = {
-    postFavorite: campsiteId => (postFavorite(campsiteId))
+    postFavorite: campsiteId => (postFavorite(campsiteId)),
+    postComment: (campsiteId, rating, author, text) => (postComment(campsiteId, rating, author, text)),
 };
 
 function RenderCampsite(props) {
@@ -109,8 +112,8 @@ class CampsiteInfo extends Component {
     }
 
     handleComment(campsiteId) {
-        console.log(JSON.stringify(this.State));
-            this.toggleModal();
+        this.props.postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
+        this.toggleModal();
     }
 
     resetForm() {
