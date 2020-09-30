@@ -39,7 +39,7 @@ class Directory extends Component {
     if (this.props.campsites.errMess) {
       return (
         <View>
-          <Text>{this.props.campsite.errMess}</Text>
+          <Text>{this.props.campsites.errMess}</Text>
         </View>
       );
     }
